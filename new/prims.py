@@ -13,6 +13,7 @@ V = int(input("Enter the number of vertices: "))
 selected_node = [0] * V
 selected_node[0] = True
 no_edge = 0
+total_weight = 0
 
 G = []
 for i in range(V):
@@ -34,5 +35,8 @@ while no_edge < V - 1:
                         b = n
 
     print(str(a) + "-" + str(b) + ":" + str(G[a][b]))
+    total_weight+=G[a][b]
     selected_node[b] = True
     no_edge += 1
+
+print("Total Weight : ",total_weight)
